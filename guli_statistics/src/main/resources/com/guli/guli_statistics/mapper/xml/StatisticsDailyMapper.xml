@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guli.guli_statistics.mapper.StatisticsDailyMapper">
+    <select id="getXDate" resultType="string">
+SELECT
+	date_calculated
+FROM
+	statistics_daily
+WHERE
+	date( date_calculated ) BETWEEN #{begin} and #{end} order by date(date_calculated)
+    </select>
+	<select id="getCourseNum"  resultType="int">
+		SELECT course_num FROM statistics_daily WHERE date_calculated = #{x}
+	</select>
+
+	<select id="getLoginNum"  resultType="int">
+		SELECT login_num FROM statistics_daily WHERE date_calculated = #{x}
+	</select>
+
+	<select id="getRegisterNum"  resultType="int">
+		SELECT register_num FROM statistics_daily WHERE date_calculated = #{x}
+	</select>
+
+	<select id="getVideoViewNum"  resultType="int">
+		SELECT video_view_num FROM statistics_daily WHERE date_calculated = #{x}
+	</select>
+</mapper>

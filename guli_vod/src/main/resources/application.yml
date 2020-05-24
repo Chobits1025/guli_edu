@@ -1,0 +1,20 @@
+vod:
+  region-id: "cn-shanghai"
+  access-key-id: "LTAI4GL7rZfzVs8DjMKVfLXj"
+  access-key-secret: "b3KOvYWxoDgQgavxNaP4S4MJbMnd80"
+server:
+  port: 8005
+spring:
+  application:
+    name: guli-vod
+  servlet:
+    multipart:
+      max-file-size: 10240MB
+      max-request-size: 102400MB
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+  instance:
+    prefer-ip-address: true #注册中心保存我的ip
+

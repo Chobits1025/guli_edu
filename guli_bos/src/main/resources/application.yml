@@ -1,0 +1,23 @@
+bos:
+  ACCESS_KEY_ID: 1572d17d949e478dac3f316b7c6fdeeb
+  SECRET_ACCESS_KEY: 8a02bc0705784c29a084920eb12a2e00
+  bucketName: chobits
+  path: https://chobits.bj.bcebos.com/
+server:
+  port: 8002
+spring:
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 10MB
+  application:
+    name: guli-bos
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+  instance:
+    prefer-ip-address: true #注册中心保存我的ip
+feign:
+  hystrix:
+    enabled: true

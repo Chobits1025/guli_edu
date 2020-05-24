@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guli.guli_course.mapper.EduCourseMapper">
+    <select id="getCoursePublishVoById" resultType="com.guli.guli_course.vo.CoursePublishVo">
+    SELECT
+	id,
+	cover,
+	lesson_num as lessonNum,
+	( SELECT title FROM edu_subject WHERE id = edu_course.subject_parent_id ) AS subjectParentTitle,
+	( SELECT title FROM edu_subject WHERE id = edu_course.subject_id ) AS subjectTitle,
+	( SELECT NAME FROM edu_teacher WHERE id = edu_course.teacher_id ) AS teacherName,
+	price
+FROM
+	edu_course
+	where id = #{id}
+    </select>
+</mapper>
