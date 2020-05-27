@@ -1,12 +1,11 @@
 package com.guli.guli_statistics.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.guli.guli_commom.exception.StatisticsDailyException;
 import com.guli.guli_statistics.entity.StatisticsDaily;
-import com.guli.guli_statistics.enums.SearchTypeEnum;
 import com.guli.guli_statistics.mapper.StatisticsDailyMapper;
 import com.guli.guli_statistics.service.StatisticsDailyService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.guli.guli_statistics.service.feign.CourseClient;
 import com.guli.guli_statistics.service.feign.UcenterClient;
 import lombok.extern.slf4j.Slf4j;
