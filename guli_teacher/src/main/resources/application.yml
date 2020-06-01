@@ -11,7 +11,11 @@ mybatis-plus:
     db-config:
       logic-delete-value: 1
       logic-not-delete-value: 0
-  mapper-locations: classpath*:com\guli\guli_course\mapper\xml\*.xml
+  mapper-locations: classpath*:com\guli\guli_teacher\mapper\xml\*.xml
+  type-aliases-package: com.guli.guli_teacher.entity
 logging:
   level:
-    root: info
+    root: error
+    com.guli.guli_teacher: debug
+  file:
+    name: D:\temp\log\guli_teacher.log

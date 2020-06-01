@@ -20,9 +20,13 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
   mapper-locations: classpath:com\guli\guli_ucenter\mapper\xml\*.xml
+#日志
 logging:
   level:
-    root: info
+    root: error
+    com.guli.guli_ucenter: debug
+  file:
+    name: D:\temp\log\guli_ucenter.log
 
 eureka:
   client:

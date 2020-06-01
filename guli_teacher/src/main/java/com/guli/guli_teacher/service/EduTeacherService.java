@@ -6,6 +6,8 @@ import com.guli.guli_teacher.entity.EduTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.guli.guli_teacher.query.TeacherQuery;
 
+import java.util.List;
+
 /**
  * <p>
  * 讲师 服务类
@@ -17,4 +19,6 @@ import com.guli.guli_teacher.query.TeacherQuery;
 public interface EduTeacherService extends IService<EduTeacher> {
 
     IPage<EduTeacher> pageQuery(Page<EduTeacher> teacherPage, TeacherQuery teacherQuery);
+
+    List<EduTeacher> initIndexTeacher();
 }

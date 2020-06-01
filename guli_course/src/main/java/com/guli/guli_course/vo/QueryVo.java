@@ -15,4 +15,7 @@ public class QueryVo {
 
     @ApiModelProperty("课程标题")
     private String title;
+
+    @ApiModelProperty("排序字段")
+    private String orderBy;
 }

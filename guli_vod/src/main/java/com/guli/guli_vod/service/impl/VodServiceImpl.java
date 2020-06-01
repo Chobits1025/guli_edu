@@ -6,6 +6,8 @@ import com.aliyun.vod.upload.resp.UploadStreamResponse;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.vod.model.v20170321.DeleteVideoRequest;
+import com.aliyuncs.vod.model.v20170321.GetVideoPlayAuthRequest;
+import com.aliyuncs.vod.model.v20170321.GetVideoPlayAuthResponse;
 import com.guli.guli_vod.exception.VodException;
 import com.guli.guli_vod.service.VodService;
 import lombok.extern.slf4j.Slf4j;
@@ -72,5 +74,17 @@ public class VodServiceImpl implements VodService {
 
 
 
+    }
+
+    @Override
+    public String getPlayAutoByID(String vid) throws ClientException {
+        GetVideoPlayAuthRequest request = new GetVideoPlayAuthRequest();
+
+        request.setVideoId(vid);
+
+        GetVideoPlayAuthResponse response = defaultAcsClient.getAcsResponse(request);
+
+        String playAuth = response.getPlayAuth();
+        return playAuth;
     }
 }

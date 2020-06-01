@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.guli.guli_course.vo.CoursePublishVo;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * <p>
  * 课程 Mapper 接口
@@ -15,5 +17,16 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface EduCourseMapper extends BaseMapper<EduCourse> {
+    /**
+     * 根据ID查询课程发布页面信息
+     * @param id
+     * @return
+     */
     CoursePublishVo getCoursePublishVoById(String id);
+
+    /**
+     * 初始化前台首页课程信息
+     * @return
+     */
+    List<EduCourse> initIndexCourse();
 }

@@ -25,3 +25,11 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
   mapper-locations: classpath:com\guli\guli_statistics\mapper\xml\*.xml
+
+#日志
+logging:
+  level:
+    root: error
+    com.guli.guli_statistics: debug
+  file:
+    name: D:\temp\log\guli_statistics.log

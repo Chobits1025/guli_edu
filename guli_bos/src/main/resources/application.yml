@@ -21,3 +21,9 @@ eureka:
 feign:
   hystrix:
     enabled: true
+logging:
+  level:
+    root: error
+    com.guli.guli_bos: debug
+  file:
+    name: D:\temp\log\guli_bos.log

@@ -8,8 +8,11 @@ import com.guli.guli_teacher.mapper.EduTeacherMapper;
 import com.guli.guli_teacher.query.TeacherQuery;
 import com.guli.guli_teacher.service.EduTeacherService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+
+import java.util.List;
 
 /**
  * <p>
@@ -21,7 +24,15 @@ import org.springframework.util.StringUtils;
  */
 @Service
 public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeacher> implements EduTeacherService {
+    @Autowired
+    private EduTeacherMapper eduTeacherMapper;
 
+    /**
+     * 根据查询条件分页查询讲师信息
+     * @param teacherPage
+     * @param teacherQuery
+     * @return
+     */
     @Override
     public IPage<EduTeacher> pageQuery(Page<EduTeacher> teacherPage, TeacherQuery teacherQuery) {
         if(teacherQuery==null){
@@ -50,5 +61,14 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
 
         IPage<EduTeacher> page = super.page(teacherPage, wrapper);
         return page;
+    }
+
+    /**
+     * 初始化首页讲师信息
+     * @return
+     */
+    @Override
+    public List<EduTeacher> initIndexTeacher() {
+        return eduTeacherMapper.initIndexTeacher();
     }
 }

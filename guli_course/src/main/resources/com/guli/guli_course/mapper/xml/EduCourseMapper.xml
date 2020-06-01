@@ -14,4 +14,7 @@ FROM
 	edu_course
 	where id = #{id}
     </select>
+	<select id="initIndexCourse" resultType="eduCourse">
+		select * from edu_course where status = 'Normal' order by buy_count desc limit 0,8;
+	</select>
 </mapper>

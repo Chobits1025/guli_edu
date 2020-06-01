@@ -18,3 +18,9 @@ eureka:
   instance:
     prefer-ip-address: true #注册中心保存我的ip
 
+logging:
+  level:
+    root: error
+    com.guli.guli_vod: debug
+  file:
+    name: D:\temp\log\guli_vod.log

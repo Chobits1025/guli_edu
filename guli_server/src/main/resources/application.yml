@@ -11,3 +11,9 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+logging:
+  level:
+    root: error
+    com.guli.guli_server: debug
+  file:
+    name: D:\temp\log\guli_server.log

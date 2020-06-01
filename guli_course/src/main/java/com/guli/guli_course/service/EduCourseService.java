@@ -7,6 +7,8 @@ import com.guli.guli_course.vo.CourseInfoVo;
 import com.guli.guli_course.vo.CoursePublishVo;
 import com.guli.guli_course.vo.QueryVo;
 
+import java.util.List;
+
 /**
  * <p>
  * 课程 服务类
@@ -30,4 +32,8 @@ public interface EduCourseService extends IService<EduCourse> {
     CoursePublishVo getCoursePublishById(String id);
 
     int getCourseNum(String day);
+
+    List<EduCourse> initIndexCourse();
+
+    List<EduCourse> getCourseByTeacherID(String teacherId);
 }

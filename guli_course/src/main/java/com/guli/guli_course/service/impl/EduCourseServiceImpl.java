@@ -42,6 +42,9 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
     private EduChapterService eduChapterService;
 
     @Autowired
+    private EduCourseMapper eduCourseMapper;
+
+    @Autowired
     private GuliBosFeign bosFeign;
 
     @Override
@@ -114,6 +117,21 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         if (!StringUtils.isEmpty(queryVo.getTitle())) {
             wrapper.like("title", queryVo.getTitle());
         }
+
+        if(!StringUtils.isEmpty(queryVo.getOrderBy())){
+            switch (queryVo.getOrderBy()){
+                case "buy_count":{
+                    wrapper.orderByDesc("buy_count");
+                    break;
+                }
+                case "gmt_create":{
+                    wrapper.orderByDesc("gmt_create");
+                }
+                case "price":{
+                    wrapper.orderByDesc("price");
+                }
+            }
+        }
         return this.page(coursePage, wrapper);
     }
 
@@ -163,5 +181,18 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
 
         Integer count = baseMapper.selectCount(wrapper);
         return count;
+    }
+
+    @Override
+    public List<EduCourse> initIndexCourse() {
+        return eduCourseMapper.initIndexCourse();
+    }
+
+    @Override
+    public List<EduCourse> getCourseByTeacherID(String teacherId) {
+        QueryWrapper<EduCourse> wrapper = new QueryWrapper<EduCourse>().eq("teacher_id", teacherId);
+
+        List<EduCourse> courses = baseMapper.selectList(wrapper);
+        return courses;
     }
 }

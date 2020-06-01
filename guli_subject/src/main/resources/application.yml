@@ -17,7 +17,10 @@ mybatis-plus:
       logic-not-delete-value: 0
 logging:
   level:
-    root: info
+    root: error
+    com.guli.guli_subject: debug
+  file:
+    name: D:\temp\log\guli_subject.log
 
 server:
   port: 8003
