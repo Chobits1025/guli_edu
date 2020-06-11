@@ -1,7 +1,4 @@
-vod:
-  region-id: "cn-shanghai"
-  access-key-id: "LTAI4GL7rZfzVs8DjMKVfLXj"
-  access-key-secret: "b3KOvYWxoDgQgavxNaP4S4MJbMnd80"
+
 server:
   port: 8005
 spring:

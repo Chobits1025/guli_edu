@@ -37,3 +37,4 @@ eureka:
 feign:
   hystrix:
     enabled: false
+
