@@ -32,7 +32,7 @@
         <mybatis-plus.version>3.0.5</mybatis-plus.version>
         <velocity.version>2.0</velocity.version>
         <swagger.version>2.9.2</swagger.version>
-        <springcloud.version>2.2.2.RELEASE</springcloud.version>
+        <springcloud.version>2.2.8.RELEASE</springcloud.version>
     </properties>
     <dependencyManagement>
         <dependencies>
